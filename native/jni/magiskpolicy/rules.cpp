@@ -194,7 +194,7 @@ void sepol_magisk_rules() {
 	sepol_allow("system_server", "dalvikcache_data_file", "file", "execute");
 
 	// Allow update_engine/addon.d-v2 to run permissive on all ROMs
-	sepol_permissive("update_engine");
+	sepol_allow("update_engine", "adb_data_file", "dir", ALL);
 
 #ifdef MAGISK_DEBUG
 	// Remove all dontaudit in debug mode
